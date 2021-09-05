@@ -33,7 +33,7 @@ export default {
         };
     },
     methods: {
-        async getImageUrl() {
+        async getImageUrl() { // this function is to get an image stored in firebase storage
             const storage = getStorage();
             const httpsReference = ref(storage, "phpMm9Pd9PM.jpg");
             getDownloadURL(httpsReference)
@@ -59,7 +59,7 @@ export default {
                     }
                 });
         },
-        upload() {
+        upload() { // this function is to upload an image to firebase storage
             const storage = getStorage();
             const httpsReference = ref(storage, "test.png");
             uploadBytes(httpsReference, this.files[0]).then(snapshot => {
