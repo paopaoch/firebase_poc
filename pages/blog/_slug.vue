@@ -13,6 +13,9 @@ export default {
         const article = await $content("blog", params.slug).fetch();
         console.log(article);
         return { article };
+    },
+    created() {
+        console.log('article', this.article)
     }
 };
 </script>
